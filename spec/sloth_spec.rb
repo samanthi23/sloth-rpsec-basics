@@ -13,8 +13,26 @@ describe Sloth do
         end
     end
     
-    descrobe "#eat" do
+    describe "#eat" do
+       it "adds a new food to the foods array" do
+            expect(sloth.foods).to_not include("leaves")
+            sloth.eat("leaves")
+            expect(sloth.foods).to include("leaves")
+            
+            
+        end
+    end
+    
+    describe "#drink" do 
         
+       it "adds the drink as a key to the drinks hash" do
+           expect(sloth.drinks).to have_key("lemonade")
+       end
+       
+         it "adds the amount as a value to the drinks hash" do
+           
+           expect(sloth.drinks).to have_value("10")
+       end
     end
 
 end
